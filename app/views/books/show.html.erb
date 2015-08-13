@@ -1,22 +1,23 @@
 <div id="books-show">
-	<h2>Ruby On Rails Power</h2>
+	
+	<h2><%= @book.title %></h2>
 	<div class="books-show-left">
-		<%= image_tag('covers/ruby_on_rails_power.jpg')%>
+		<%= image_tag(@book.coverpath)%>
 	</div>
 	<div class="book-show-right">
 		<h3>Book Info:</h3>
 		<ul>
-			<li><strong>Category: </strong>Ruby on Rails</li>
-			<li><strong>Author: </strong>Aneesha Bakharia</li>
-			<li><strong>Publisher: </strong>Course Technology PTR</li>
-			<li><strong>Year: </strong>2007</li>
-			<li><strong>ISBN: </strong>1598632167</li>
-			<li><strong>Format: </strong>Paperback</li>
-			<li><strong>Pages: </strong>687</li>
+			<li><strong>Category: </strong><%= @book.category.name %></li>
+			<li><strong>Author: </strong><%= @book.author.first_name %> <%=@book.author.last_name %></li>
+			<li><strong>Publisher: </strong><%= @book.publisher.name %></li>
+			<li><strong>Year: </strong><%= @book.year %></li>
+			<li><strong>ISBN: </strong><%= @book.isbn %></li>
+			<li><strong>Format: </strong><%= @book.format %></li>
+			<li><strong>Pages: </strong><%= @book.pages%></li>
 		</ul>
-		<%= link_to "Buy for $5.47", "http://www.ebay.com.au/itm/Ruby-on-Rails-Power-The-Comprehensive-Guide-Bakharia-Aneesha-New-Item-/360508133748?hash=item53eff59174", class:'btn btn-success', target:'_blank'%>
+		<%= link_to "Buy for $20.00", @book.buy, class:'btn btn-success', target:'_blank'%>
 	</div>
 	<div class="clearfix"></div>
 	<h4>Excerpt:</h4>
-	<p>Mauris eu lorem vitae arcu finibus placerat sed sit amet massa. Nullam porttitor nibh ac sapien pellentesque, egestas commodo sapien tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio risus. Maecenas mauris tortor, ultricies quis euismod ac, porta eget ipsum. Proin gravida ante sit amet ipsum aliquam vehicula. Suspendisse malesuada ex eu pulvinar hendrerit. Mauris quis ante facilisis, pharetra urna vel, semper dui.</p>
+	<p><%= @book.excerpt %></p>
 </div>

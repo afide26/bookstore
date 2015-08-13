@@ -1,59 +1,13 @@
 <div id="books-index">
+<% @books.each_slice(4) do |book| %>
 	<div class="row">
-
-		<div class="col-md-3 col-sm-3">
-			<h3>Ruby on Rails Power</h3>
-			<%= image_tag('covers/ruby_on_rails_power.jpg')%>
-			<%= link_to "Read More", book_path(1), class:"btn btn-primary" %>
-		</div>
-
-		<div class="col-md-3 col-sm-3">
-			<h3>Ajax on Rails</h3>
-			<%= image_tag('covers/ajax_on_rails.jpg')%>
-			<%= link_to "Read More", book_path(2), class:"btn btn-primary" %>
-		</div>
-
-		<div class="col-md-3 col-sm-3">
-			<h3>Beginning PHP</h3>
-			<%= image_tag('covers/beginning_php_5.jpg')%>
-			<%= link_to "Read More", book_path(3), class:"btn btn-primary" %>
-		</div>
-
-		<div class="col-md-3 col-sm-3">
-			<h3>Head First PHP</h3>
-			<%= image_tag('covers/head_first_php.jpg')%>
-			<%= link_to "Read More", book_path(4), class:"btn btn-primary" %>
-		</div>
-
-
+		<% book.each do |book| %>
+			<div class="col-md-3 col-sm-3">
+				<h3><%= book.title %></h3>
+				<%= image_tag(book.coverpath)%>
+				<%= link_to "Read More", book_path(book), class:"btn btn-primary" %>
+			</div>
+		<% end %>
 	</div>
-
-	<div class="row">
-	
-		<div class="col-md-3 col-sm-3">
-			<h3>HTML5 Trainer</h3>
-			<%= image_tag('covers/html5_trainer.jpg')%>
-			<%= link_to "Read More", book_path(5), class:"btn btn-primary" %>
-		</div>
-
-		<div class="col-md-3 col-sm-3">
-			<h3>HTML5 &amp; CSS3</h3>
-			<%= image_tag('covers/html5_css3.jpg')%>
-			<%= link_to "Read More", book_path(6), class:"btn btn-primary" %>
-		</div>
-
-		<div class="col-md-3 col-sm-3">
-			<h3>PHP Cookbook</h3>
-			<%= image_tag('covers/php_cookbook.jpg')%>
-			<%= link_to "Read More", book_path(7), class:"btn btn-primary" %>
-		</div>
-
-		<div class="col-md-3 col-sm-3">
-			<h3>Ruby on Rails Tutorial</h3>
-			<%= image_tag('covers/ruby_on_rails_tutorial.jpg')%>
-			<%= link_to "Read More", book_path(8), class:"btn btn-primary" %>
-		</div>
-
-	</div>
-
+<% end %>
 </div>

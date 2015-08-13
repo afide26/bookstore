@@ -38,6 +38,7 @@ footer{
 	margin-top: 20px;
 	text-align: center;
 	padding-top: 20px;
+	bottom: 0;
 }
 
 #books-index {
@@ -89,6 +90,11 @@ footer{
 	margin-top: 10px;
 }
 
+
+/*PSEUDO CLASS TO FIX FOOTER*/
+.content{
+	min-height: 600px;
+}
 
 
 
