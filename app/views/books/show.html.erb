@@ -15,9 +15,12 @@
 			<li><strong>Format: </strong><%= @book.format %></li>
 			<li><strong>Pages: </strong><%= @book.pages%></li>
 		</ul>
-		<%= link_to "Buy for $20.00", @book.buy, class:'btn btn-success', target:'_blank'%>
+		<%= link_to "Buy for " + @book.price, @book.buy, class:'btn btn-success', target:'_blank'%>
 	</div>
 	<div class="clearfix"></div>
 	<h4>Excerpt:</h4>
 	<p><%= @book.excerpt %></p>
+
+	<h3>Admin Functions</h3>
+	<%= link_to 'Edit', edit_book_path(@book) %> | <%= link_to 'Delete', book_path(@book), method: :delete, data: {confirm: "Are you sure?"} %> | <%= link_to 'Back', books_path %> 
 </div>

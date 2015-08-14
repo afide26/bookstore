@@ -5,3 +5,6 @@ class Book < ActiveRecord::Base
 
 	validates_presence_of :title
 end
+
+
+# , :category_id, :author_id, :publisher_id, :isbn, :buy, :price, :format, :excerpt, :pages, :year
