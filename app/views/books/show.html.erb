@@ -8,7 +8,7 @@
 		<h3>Book Info:</h3>
 		<ul>
 			<li><strong>Category: </strong><%= @book.category.name %></li>
-			<li><strong>Author: </strong><%= @book.author.first_name %> <%=@book.author.last_name %></li>
+			<li><strong>Author: </strong><%= full_name(@book.author) %></li>
 			<li><strong>Publisher: </strong><%= @book.publisher.name %></li>
 			<li><strong>Year: </strong><%= @book.year %></li>
 			<li><strong>ISBN: </strong><%= @book.isbn %></li>
